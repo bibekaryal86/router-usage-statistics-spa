@@ -7,8 +7,7 @@ export const fetchUsageStatistics = (selected = '') => {
     dispatch(fetchInternetUsageStatisticsBegin());
 
     try {
-      console.log('ROUTER_STAT_URL: ', process?.env?.ROUTER_STAT_URL);
-      const routerStatUrl = 'http://routerstat.appspot.com';
+      const routerStatUrl = 'https://routerstat.appspot.com'; // use https because http gives error
       const { modelList, yearMonthSet, modelTotal } = await Async.fetch<UsageResponse>(routerStatUrl, {
         queryParams: {
           toJson: true,
