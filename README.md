@@ -9,11 +9,12 @@
 - TODO: testing framework
 
 - The app is one of the three repos used to save-retrieve-display data:
+
   - https://github.com/bibekaryal86/router-usage-statistics-save (save data)
   - https://github.com/bibekaryal86/router-usage-statistics-java (retrieve data)
   - https://github.com/bibekaryal86/router-usage-statistics-spa (view data) (this)
 
 - The app is deployed at:
-  - https://router-spa.appspot.com/
-  - Because of high RAM requirement (~530MB) to run a single instance (???), the app's instance is mostly shutdown and may take a while to startup and serve (free-tier limits)
-  - First attempt to view the page usually results in 502-Bad Gateway, second attempt takes longer but eventually the page opens
+  - AWS Amplify: https://main.d1j5rwsdc2mo3o.amplifyapp.com/
+  - GCP App Engine: https://router-spa.appspot.com/
+  - (GCP) Because of high RAM requirement (~530MB) to run a single instance (???), the app's instance is mostly shutdown and may take a while to startup and serve
