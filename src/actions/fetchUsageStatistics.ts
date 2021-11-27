@@ -1,4 +1,8 @@
-import { FETCH_USAGE_DATA_BEGIN, FETCH_USAGE_DATA_FAILURE, FETCH_USAGE_DATA_SUCCESS } from '../types/actionTypes';
+import {
+  FETCH_USAGE_DATA_BEGIN,
+  FETCH_USAGE_DATA_FAILURE,
+  FETCH_USAGE_DATA_SUCCESS,
+} from '../types/actionTypes';
 import { UsageResponse, UsageStatistics } from '../types/dataTypes';
 import { Async } from '../utils/fetch';
 
@@ -7,18 +11,35 @@ export const fetchUsageStatistics = (selected = '') => {
     dispatch(fetchInternetUsageStatisticsBegin());
 
     try {
-      const routerStatUrl = 'https://routerstat.appspot.com'; // use https because http gives error
-      const { modelList, yearMonthSet, modelTotal } = await Async.fetch<UsageResponse>(routerStatUrl, {
-        queryParams: {
-          toJson: true,
-          selected,
-        },
-      });
+      const reactAppEnv = (process.env.REACT_APP_ENV as string) || '';
+      let routerStatUrl = 'https://routerstat.appspot.com';
 
-      dispatch(fetchInternetUsageStatisticsSuccess(modelList, yearMonthSet, modelTotal));
+      if (['local', 'docker'].includes(reactAppEnv)) {
+        routerStatUrl = 'http://192.168.1.25:7001';
+      }
+
+      const { modelList, yearMonthSet, modelTotal } =
+        await Async.fetch<UsageResponse>(routerStatUrl, {
+          queryParams: {
+            toJson: true,
+            selected,
+          },
+        });
+
+      dispatch(
+        fetchInternetUsageStatisticsSuccess(
+          modelList,
+          yearMonthSet,
+          modelTotal,
+        ),
+      );
     } catch (err) {
       console.error('Error Fetching Internet Usage Statistics', err);
-      dispatch(fetchInternetUsageStatisticsFailure('Error Fetching Internet Usage Statistics: ' + err?.message));
+      dispatch(
+        fetchInternetUsageStatisticsFailure(
+          'Error Fetching Internet Usage Statistics: ' + err?.message,
+        ),
+      );
     }
   };
 };

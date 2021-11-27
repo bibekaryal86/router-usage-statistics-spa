@@ -8,10 +8,9 @@
 
 - TODO: testing framework
 
-- The app is one of the three repos used to save-retrieve-display data:
+- The app is one of the two repos used to save-retrieve-display data:
 
-  - https://github.com/bibekaryal86/router-usage-statistics-save (save data)
-  - https://github.com/bibekaryal86/router-usage-statistics-java (retrieve data)
+  - https://github.com/bibekaryal86/router-usage-statistics-java (save/retrieve data)
   - https://github.com/bibekaryal86/router-usage-statistics-spa (view data) (this)
 
 - The app is deployed at:
