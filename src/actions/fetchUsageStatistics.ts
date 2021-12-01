@@ -11,6 +11,8 @@ export const fetchUsageStatistics = (selected = '') => {
     dispatch(fetchInternetUsageStatisticsBegin());
 
     try {
+      console.log(process.env.REACT_APP_ENV);
+      console.log(process.env.REACT_APP_TEST);
       const reactAppEnv = (process.env.REACT_APP_ENV as string) || '';
       let routerStatUrl = 'https://routerstat.appspot.com';
 

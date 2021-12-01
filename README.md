@@ -17,3 +17,8 @@
   - AWS Amplify: https://main.d1j5rwsdc2mo3o.amplifyapp.com/
   - GCP App Engine: https://router-spa.appspot.com/
   - (GCP) Because of high RAM requirement (~530MB) to run a single instance (???), the app's instance is mostly shutdown and may take a while to startup and serve
+
+# FOR THIS BRANCH
+
+docker build -t my_app:dev --build-arg REACT_APP_ENV=192.168.1.25:7001 .
+docker run -e TZ=America/Denver --name my-app-dev -d -p 7000:80 my_app:dev
