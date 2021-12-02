@@ -4,11 +4,9 @@ WORKDIR /usr/src/app
 COPY package*.json /usr/src/app/
 RUN npm install
 COPY . /usr/src/app/
-ARG REACT_APP_ENV
-ARG REACT_APP_TEST
-ENV REACT_APP_ENV $REACT_APP_ENV
-ENV REACT_APP_TEST=true
-RUN npm run build-docker
+ARG REACT_APP_BASE_URL
+ENV REACT_APP_BASE_URL=$REACT_APP_BASE_URL
+RUN npm run build
 
 # STAGE 2: PRODUCTION DEPLOYMENT #
 FROM nginx:1.21.4-alpine
