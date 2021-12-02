@@ -11,11 +11,14 @@ export const fetchUsageStatistics = (selected = '') => {
     dispatch(fetchInternetUsageStatisticsBegin());
 
     try {
-      const reactAppEnv = (process.env.REACT_APP_ENV as string) || '';
-      let routerStatUrl = 'https://routerstat.appspot.com';
+      const baseUrl =
+        (process.env.REACT_APP_BASE_URL as string) || 'routerstat.appspot.com';
 
-      if (['local', 'docker'].includes(reactAppEnv)) {
-        routerStatUrl = 'http://192.168.1.25:7001';
+      let routerStatUrl;
+      if (baseUrl.includes('routerstat')) {
+        routerStatUrl = 'https://' + baseUrl;
+      } else {
+        routerStatUrl = 'http://' + baseUrl;
       }
 
       const { modelList, yearMonthSet, modelTotal } =
