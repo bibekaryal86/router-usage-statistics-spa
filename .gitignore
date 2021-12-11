@@ -25,3 +25,7 @@ yarn-error.log*
 #intellij
 .idea
 router-usage-statistics-spa.iml
+
+#intellij
+.idea
+router-usage-statistics-spa.iml

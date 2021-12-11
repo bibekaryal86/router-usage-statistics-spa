@@ -12,8 +12,8 @@
   - https://github.com/bibekaryal86/router-usage-statistics-spa (view data) (this)
 
 - The app is deployed at:
-  - AWS Amplify: https://routerstatspa.d1j5rwsdc2mo3o.amplifyapp.com/
-  - Amplify uses branch `routerstatspa` for deployment (for URL to include `routerstatspa`)
+  - AWS Amplify: TODO
+  - AWS Amplify uses `routerstat` branch to deploy
 
 # Docker
 - The default URL for the app is pointing to GCP where router-usage-statistics-java is deployed. If that is needed to change to get data locally, REACT_APP_BASE_URL variable should be provided at build time (there is no run time environment in browser)
