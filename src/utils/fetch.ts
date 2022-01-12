@@ -39,8 +39,7 @@ const addPathParams = (path: string, paramMap: {}) => {
 
 const pathBuilder = ({ path = '', queryParams = {}, pathParams = {} }: Partial<PathBuilder>): string => {
   const queryString = addQueryParams(queryParams);
-  const url = `${addPathParams(path, pathParams)}${queryString}`;
-  return url;
+  return `${addPathParams(path, pathParams)}${queryString}`;
 };
 
 export const Async = {

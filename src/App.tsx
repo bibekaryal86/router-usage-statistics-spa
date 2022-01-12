@@ -1,8 +1,8 @@
-import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
-import {Route, Switch} from 'react-router-dom';
+import {createTheme, ThemeProvider} from '@material-ui/core/styles';
+import {Route, Routes} from 'react-router-dom';
 import UsageContainer from './components/UsageContainer';
 
-const darkTheme = createMuiTheme({
+const darkTheme = createTheme({
   palette: {
     type: 'dark',
   },
@@ -12,9 +12,9 @@ function App() {
   return (
     <div>
       <ThemeProvider theme={darkTheme}>
-        <Switch>
-          <Route exact path="/" component={UsageContainer} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<UsageContainer />} />
+        </Routes>
       </ThemeProvider>
     </div>
   );
