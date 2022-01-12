@@ -15,7 +15,7 @@ interface UsageTableProps {
   loading: boolean;
 }
 
-const StyledTableCell = withStyles((theme) => ({
+const StyledTableCell = withStyles(() => ({
   head: {
     fontWeight: 600,
   },
