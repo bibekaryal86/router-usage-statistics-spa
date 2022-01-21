@@ -74,13 +74,13 @@ export default function Usage(props: UsageProps) {
             >
                 <div className={classes.toolbarIcon}>
                     <Typography align="center" component="h2" color="textSecondary" noWrap className={classes.title}>
-                        Available Months
+                        Available Years/Months
                     </Typography>
                     <IconButton onClick={handleDrawerClose}>{'<<'}</IconButton>
                 </div>
                 <Divider/>
-                <UsageList selected={selected} setSelected={setSelected} yearMonthSet={data?.yearMonthSet}
-                           loading={loading}/>
+                {open && <UsageList selected={selected} setSelected={setSelected} yearMonthSet={data?.yearMonthSet}
+                                    loading={loading}/>}
             </Drawer>
 
             <main className={classes.content}>
