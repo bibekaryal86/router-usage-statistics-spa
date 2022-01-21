@@ -6,10 +6,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 
 ReactDOM.render(
-  <ReduxProvider store={configureStore()}>
-    <Router>
-      <App />
-    </Router>
-  </ReduxProvider>,
-  document.getElementById('app'),
+    <ReduxProvider store={configureStore()}>
+        <Router>
+            <App/>
+        </Router>
+    </ReduxProvider>,
+    document.getElementById('app'),
 );
