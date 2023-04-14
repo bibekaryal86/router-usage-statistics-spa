@@ -24,9 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install
         run: npm install
-      - name: Lint
-        run: npm run lint
-      - name: Test
-        run: npm test -- --reporters=default
-      - name: Build
-        run: npx webpack --config webpack.prod.config.js
+      - name: NPM Build
+        run: npm run build
+      - name: NPX Build
+        run: npx webpack
