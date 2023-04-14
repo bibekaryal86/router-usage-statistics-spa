@@ -24,7 +24,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install
         run: npm install
-      - name: NPM Build
+      - name: Build
         run: npm run build
-      - name: NPX Build
-        run: npx webpack
