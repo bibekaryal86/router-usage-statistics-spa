@@ -12,3 +12,4 @@ heavily utilizes the free template offered here:
 
 - The app is deployed at:
     - AWS Amplify: https://routerstatspa.d1j5rwsdc2mo3o.amplifyapp.com/
+
